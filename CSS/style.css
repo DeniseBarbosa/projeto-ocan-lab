@@ -6,6 +6,8 @@
     --secondary-text-color: #191919;
     --secondary-color: #868686;
     --tertiary-color: #eff3f4;
+    --footer-azul-escuro: #1722d4;
+    --footer-preto-icon: #010103;
 }
 *{
     font-family: "Lato";
@@ -28,7 +30,7 @@ input[type="submit"]{
 /* Cabeçalho e banner */
 #header{
     min-height: 90vh; /*banner vai ter 90% da largura da tela*/
-    background-image: url("../CSS/img/main_banner4.png"); /*colocando uma img de fundo, nota-se q a img vai se repetir*/
+    background-image: url("../img/main_banner4.png"); /*colocando uma img de fundo, nota-se q a img vai se repetir*/
     background-size: cover;/*(tratamento da img) a img será otimizada para a área que eu tenho a disposição, vai parar de repetir*/
     background-position: center;/*centralizar a img*/
     color: var(--primary-text-color); /*os textos do cabeçalho e banner vão ficar brancos com exceção dos links*/
@@ -137,4 +139,28 @@ strong{
     font-size: 1.8rem; /*nessa seção aumenta a fonte do título*/
     margin-bottom: 1rem;/*título vai empurrar o parágrafo para baixo*/
     text-transform: uppercase;
+}
+
+/* Rodapé */
+#footer{
+    background-color: var(--main-blue);
+    text-align: center;
+    height: 250px;
+    padding:3rem 3rem 5rem;
+    
+}
+
+.footer-brand h2{
+    background-color: var(--footer-azul-escuro);
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    color: var(--primary-text-color);
+}
+.contact-info p{
+    margin-bottom: 0.7rem;
+    color: var(--primary-text-color);
+    
+}
+.contact-info p i {
+    color: var(--footer-preto-icon);
 }
