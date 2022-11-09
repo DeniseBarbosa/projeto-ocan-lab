@@ -1,0 +1,140 @@
+/* Geral */
+/* Variáveis para cores, cores que pode se repetir a todo momento */
+:root{
+    --main-blue: #2674de;
+    --primary-text-color: #fff;
+    --secondary-text-color: #191919;
+    --secondary-color: #868686;
+    --tertiary-color: #eff3f4;
+}
+*{
+    font-family: "Lato";
+    padding: 0; /*espaçamento interno*/
+    margin: 0; /*espaçamento externo*/
+    box-sizing: border-box; /*n ultrapassar larg máxima, ficando todos dentro do elemento pai*/
+}
+
+a{
+    text-decoration: none; /*todos os underlines dos links sejam tirados*/
+}
+img{
+    width: 100%; /*todas as img vai ter uma largura de 100%, vai respeitar o elemento pai. Ex se o elemento pai tiver 500px de largura a img também vai ter 500px de largura*/
+}
+
+input[type="submit"]{
+    cursor: pointer; /*isso é em relação ao botão enviar, todas as vezes que passar o mouse (cursor) no botão ele muda para mãozinha*/
+}
+
+/* Cabeçalho e banner */
+#header{
+    min-height: 90vh; /*banner vai ter 90% da largura da tela*/
+    background-image: url("../CSS/img/main_banner4.png"); /*colocando uma img de fundo, nota-se q a img vai se repetir*/
+    background-size: cover;/*(tratamento da img) a img será otimizada para a área que eu tenho a disposição, vai parar de repetir*/
+    background-position: center;/*centralizar a img*/
+    color: var(--primary-text-color); /*os textos do cabeçalho e banner vão ficar brancos com exceção dos links*/
+    /*margin-bottom: 2rem;afastando os elementos com a margem de baixo para não ficar grudadas uma na outras*/
+    position: relative;/*elementos dentro com posição absoluta >> podendo mover para qualquer local dentro do container ou da página*/
+    
+}
+#inner-header{
+    display: flex;/*vai posicionar os elementos de forma mais simples, nesse caso os lnks vai ficar do lado da marca*/
+    justify-content: space-between; /*marcas e links vai ficar um de cada canto*/
+    align-items: center;/*links vaai centralizar com a marca*/
+}
+#brand{ /*marca o ocan-ocpocan cabeçalho*/
+    background-color: var(--main-blue); /*cor de fundo*/
+    padding: 1rem; /*espaçamento interno entre o conteúdo e a borda afastando o texto das extremidades dando um respiro*/
+}
+#navbar{ /*barra de navegação*/
+    display: flex;
+    gap: 4rem; /*espaçamento dos links igualmente*/
+    text-transform: uppercase; /*deixa o texto links em caixa alta*/
+    margin-right: 2rem; /*vai deslocar o link menu da margem direita da um espaamento*/
+}
+
+#navbar a {
+    color: var(--primary-text-color);
+    font-weight: bold;/*texto em negrito*/
+    
+}
+
+.banner.active{
+    opacity: 1; /*aparece*/
+}
+
+.banner{
+    max-width: 50%;/*ele n vai passar de 50% da tela*/
+    padding: 4rem;
+    opacity: 0; /*nesse caso o banner vai sumir*/
+    position: absolute; /*vão ficar todos juntos*/
+    transition: 0.6s; /*aparecer e desaparecer*/
+}
+.banner h2{
+    font-size: 4rem;
+    margin-bottom: 1.2rem; /*vai empurrar o parágrafo  para baixo*/
+    position: relative; /*isso aqui tem relação com a posição do quadrado e texto (.square) lembrando que o z-index tem correlação*/
+    z-index: 2;/*mudar a posicação*/
+}
+.banner p{
+    font-size: 1.5rem; /*alterar o tamanho do parágrafo */
+}
+
+.square{ /*criando o quadrado*/
+    display: block;
+    width: 150px; /*largura*/
+    height: 150px; /*altura*/
+    background-color: var(--main-blue);
+    position: absolute; /*o quadrado vai ficar por cima do texto*/
+    z-index: 1;/*mudar a posicação*/
+    left: 20px; /*a caixa se aproxima da esquerda da margem*/
+    top: 40px;/*a caixa é posicionada para baixo*/
+}
+.dots{ /*trabalhando com o três quadradinhos*/
+    display: flex;
+    gap: 2rem; /*espaçamentos inguais entre os elementos*/
+    position: absolute; /*para ter flexibilidade quando for mover a caixa para ambos os lados*/
+    bottom: 3rem; /*vai posicionar em baixo*/
+    left: 3rem;/*vai empurrar para a direita*/
+
+
+}
+.dot{ /*foi dado forma aos quadradinhos*/
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary-color);
+}
+.dot.active{
+    background-color: var(--main-blue);
+}
+.teste{
+    background-color: var(--main-blue);
+    text-align: center;
+    padding: 2em;
+    font-weight: 500;
+    font-weight: bold;
+}
+strong{
+    color: var(--primary-text-color);
+}
+/* Escopos */
+
+#other-services{ /*imagens 3*/
+    width: 100%;
+    display: flex; /*colocar as img uma do lado da outra, lembrado que nesse caso esta dando flexibilidade no posicionamento*/
+    gap: 2rem; /*espaçamento de forma igual entre as imgs*/
+    padding: 2rem;/*espaçamento interno na lateral*/
+}
+.service-info{
+    background-color: var(--tertiary-color);
+    padding: 2rem 1.4rem;
+    min-height: 250px;/*independente do conteudo os container vão sempre ter o mesmo tamanho*/
+    margin-top: -3rem;/*para o texto entrar um pouco na img*/ 
+    z-index: 2;/*tirar a img na frente do texto*/
+    position: relative;/*faz com que o elemento fique na frente da img*/
+}
+
+.services h4{
+    font-size: 1.8rem; /*nessa seção aumenta a fonte do título*/
+    margin-bottom: 1rem;/*título vai empurrar o parágrafo para baixo*/
+    text-transform: uppercase;
+}
