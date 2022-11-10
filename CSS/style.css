@@ -177,3 +177,76 @@ strong{
 .contact-info p i {
     color: var(--footer-preto-icon);
 }
+
+/* Mobile navbar */
+#menu, #close-menu{
+    font-size: 2rem;
+    padding: 1rem;
+}
+#close-menu{
+    position: absolute; /*colocar no canto superior direito*/
+    top: 0;
+    right: 0;
+    display: none; /*ocultar o icon X*/
+}
+
+#mobile-navbar{
+    position: fixed; /* ele vai ficar sempre fixo na tela, para quando a tele for mexida para baixo ele n acompanhar*/
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    transition: 0.4s;/*animação*/ 
+    z-index: 5;
+}
+
+#mobile-navbar.menu-active{
+    left: 0;
+}
+
+#mobile-navbar a { /*links do menu*/
+    color: var(--primary-text-color);
+    font-size: 2rem;
+    text-align: center; /*empurrar todo o menu para o centro */
+    margin-bottom: 1rem; /*vai dar um espaçamento entre as palavras*/
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--footer-azul-escuro);
+}
+
+.banner p {
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+
+@media (max-width: 450px){
+    /* Geral */
+    body{
+        overflow-x: hidden; /*tudo que passar da tela n precisa ser contabilizado*/
+    }
+    /* navbar */
+    #navbar{
+        display: none;/*o menu para desktop vai sumir*/
+    }
+    #menu,
+    #close-menu{
+        display: block; /*aparecer o menu para usuario quando estiver no cel*/
+    }
+
+    .banner{
+        max-width: 100%; /*esta espandindo o banner e reposicionando so elementos */
+        padding: 4rem 2rem;
+    }
+
+    .banner h2{
+        font-size: 3rem; /*diminuir a fonte*/
+    }
+
+    #other-services{
+        flex-wrap: wrap; /*vai colocar um a baixo do outro*/
+    }
+}
